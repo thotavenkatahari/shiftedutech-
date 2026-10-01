@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShiftEduTech</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(35, 35, 35);
+            background-color: rgb(255, 255, 255);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgb(255, 255, 255);
+            border-bottom: 1px solid rgb(225, 225, 225);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .top {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(20, 65, 120);
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(45, 45, 45);
+        }
+
+        nav a:hover {
+            color: rgb(20, 105, 190);
+        }
+
+        .hero {
+            background-color: rgb(240, 247, 255);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .small-title {
+            color: rgb(20, 105, 190);
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin: 10px auto 20px;
+            font-size: 50px;
+            line-height: 1.2;
+            color: rgb(20, 50, 90);
+        }
+
+        .hero-text {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .steps {
+            max-width: 1000px;
+            margin: 35px auto;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .steps div {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(215, 225, 235);
+            border-radius: 8px;
+            padding: 13px 7px;
+            font-size: 13px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: rgb(20, 105, 190);
+            color: rgb(255, 255, 255);
+            padding: 12px 20px;
+            border-radius: 6px;
+        }
+
+        .white-button {
+            background-color: rgb(255, 255, 255);
+            color: rgb(20, 105, 190);
+            border: 1px solid rgb(20, 105, 190);
+        }
+
+        .section {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .light-section {
+            width: 100%;
+            max-width: none;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: rgb(248, 250, 253);
+        }
+
+        h2 {
+            font-size: 35px;
+            line-height: 1.3;
+            margin: 8px 0 15px;
+            color: rgb(25, 45, 70);
+        }
+
+        .intro {
+            max-width: 800px;
+            margin-bottom: 30px;
+            color: rgb(85, 85, 85);
+        }
+
+        .path-grid,
+        .course-grid,
+        .gallery-grid,
+        .support-grid,
+        .service-grid,
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .path-card,
+        .course-card,
+        .gallery-card,
+        .support-grid div,
+        .service-grid div,
+        .about-grid div {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(225, 225, 225);
+            border-radius: 10px;
+            padding: 22px;
+        }
+
+        .path-card span {
+            color: rgb(20, 105, 190);
+            font-weight: bold;
+        }
+
+        h3 {
+            color: rgb(30, 50, 75);
+            margin: 7px 0;
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .course-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-image {
+            height: 130px;
+            background-color: rgb(245, 248, 252);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .course-image img {
+            max-width: 90px;
+            max-height: 90px;
+        }
+
+        .category {
+            color: rgb(20, 105, 190);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .course-card ul {
+            margin: 15px 0 20px 20px;
+        }
+
+        .card-button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            background-color: rgb(20, 105, 190);
+            padding: 11px;
+            border-radius: 6px;
+            margin-top: auto;
+        }
+
+        .text-button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(20, 105, 190);
+            margin-top: 10px;
+        }
+
+        .gallery-card {
+            padding: 12px;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+
+        .gallery-card p {
+            padding: 10px 5px 3px;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            width: 100%;
+            max-width: none;
+            background-color: rgb(240, 247, 255);
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-box,
+        .contact-info {
+            background-color: rgb(255, 255, 255);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgb(220, 225, 230);
+        }
+
+        form {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid rgb(200, 205, 210);
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        form button {
+            padding: 13px;
+            background-color: rgb(20, 105, 190);
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 13px;
+            color: rgb(100, 100, 100);
+        }
+
+        .recognition {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .recognition div {
+            padding: 25px;
+            border: 1px solid rgb(220, 225, 230);
+            border-radius: 8px;
+            text-align: center;
+            background-color: rgb(248, 250, 253);
+        }
+
+        .faq-box {
+            max-width: 950px;
+            margin-top: 30px;
+        }
+
+        details {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(220, 225, 230);
+            margin-bottom: 10px;
+            border-radius: 7px;
+            padding: 17px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: rgb(30, 50, 75);
+        }
+
+        details p {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: rgb(25, 35, 50);
+            color: rgb(235, 235, 235);
+            padding: 50px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 30px;
+        }
+
+        footer h2,
+        footer h3 {
+            color: rgb(255, 255, 255);
+        }
+
+        footer a {
+            color: rgb(220, 225, 230);
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid rgb(70, 80, 95);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .top {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            .steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .path-grid,
+            .course-grid,
+            .gallery-grid,
+            .support-grid,
+            .service-grid,
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recognition {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .steps,
+            .path-grid,
+            .course-grid,
+            .gallery-grid,
+            .support-grid,
+            .service-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 10px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="top">
+        <div class="logo">ShiftEduTech</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#path">Career Path</a>
+            <a href="#courses">Courses</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <p class="small-title">Career platform for students and graduates</p>
+
+    <h1>A Career Path, Not Just an IT Course</h1>
+
+    <p class="hero-text">
+        Learn, practice, build, get mentored, become job-ready, and get career support —
+        classroom and online in Hyderabad and Eluru.
+    </p>
+
+    <div class="steps">
+        <div>1. Learn, then</div>
+        <div>2. Practice, then</div>
+        <div>3. Build, then</div>
+        <div>4. Get mentored, then</div>
+        <div>5. Become job-ready, then</div>
+        <div>6. Get career support</div>
+    </div>
+
+    <div class="buttons">
+        <a href="#contact" class="button">Talk to a counselor</a>
+        <a href="#path" class="button white-button">See the path</a>
+    </div>
+</section>
+
+<section id="path" class="section">
+    <p class="small-title">The ShiftEduTech path</p>
+    <h2>Learn, build, and get career support</h2>
+
+    <p class="intro">
+        This is the product: a sequence from first class to counselor follow-up.
+        Courses are how you enter the path, not the whole story.
+    </p>
+
+    <div class="path-grid">
+        <div class="path-card">
+            <span>01</span>
+            <h3>Learn</h3>
+            <p>Classroom and online batches in Java, Python, .NET, Data, Cloud, and core tech.</p>
+        </div>
+
+        <div class="path-card">
+            <span>02</span>
+            <h3>Practice</h3>
+            <p>Labs, assignments, and weekly checkpoints with doubt support.</p>
+        </div>
+
+        <div class="path-card">
+            <span>03</span>
+            <h3>Build</h3>
+            <p>Live projects and internships you can show in interviews.</p>
+        </div>
+
+        <div class="path-card">
+            <span>04</span>
+            <h3>Get mentored</h3>
+            <p>Stack-wise mentors review code, projects, and interview answers.</p>
+        </div>
+
+        <div class="path-card">
+            <span>05</span>
+            <h3>Become job-ready</h3>
+            <p>Resume, aptitude, and mock interviews before you apply.</p>
+        </div>
+
+        <div class="path-card">
+            <span>06</span>
+            <h3>Get career support</h3>
+            <p>Counselor follow-up and placement assistance after the batch.</p>
+        </div>
+    </div>
+
+    <div class="center">
+        <a href="#contact" class="button">Book a career counselling call</a>
+    </div>
+</section>
+
+<section id="courses" class="section light-section">
+    <p class="small-title">Pick a stack to enter the path</p>
+    <h2>Courses</h2>
+
+    <p class="intro">
+        Each course is one way into Learn → Practice → Build.
+        Open a course page for the outline, then talk to a counselor about the next batch.
+    </p>
+
+    <div class="course-grid">
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/java.svg" alt="Java">
+            </div>
+            <p class="category">Software &amp; Design</p>
+            <h3>Java Full Stack</h3>
+            <p>Master Java programming, Spring Boot, Hibernate, REST APIs &amp; Web development. Build end-to-end enterprise Applications.</p>
+            <ul>
+                <li>Core Java Programming</li>
+                <li>Spring Boot Framework</li>
+                <li>Hibernate ORM</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/python.svg" alt="Python">
+            </div>
+            <p class="category">Software &amp; Design</p>
+            <h3>Python Full Stack</h3>
+            <p>Learn Python, Django, Flask, databases, and web development. Create dynamic websites and web applications.</p>
+            <ul>
+                <li>Python Programming</li>
+                <li>Django Framework</li>
+                <li>Flask Framework</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/tensorflow.svg" alt="AI">
+            </div>
+            <p class="category">Data Science &amp; AI</p>
+            <h3>Artificial Intelligence</h3>
+            <p>Learn machine learning, deep learning, neural networks, computer vision, and natural language processing. Build AI models and applications.</p>
+            <ul>
+                <li>Machine Learning Fundamentals</li>
+                <li>Deep Learning &amp; Neural Networks</li>
+                <li>Computer Vision</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/vlsi.svg" alt="VLSI">
+            </div>
+            <p class="category">Core Tech &amp; Cloud</p>
+            <h3>VLSI</h3>
+            <p>Study integrated circuit design, digital electronics, ASIC design, and verification. Work with industry-standard EDA tools.</p>
+            <ul>
+                <li>Digital Electronics</li>
+                <li>ASIC Design</li>
+                <li>Circuit Verification</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/iot.svg" alt="IoT">
+            </div>
+            <p class="category">Core Tech &amp; Cloud</p>
+            <h3>Embedded System &amp; IoT</h3>
+            <p>Explore microcontrollers, sensors, IoT protocols, and embedded programming. Build smart connected devices.</p>
+            <ul>
+                <li>Microcontroller Programming</li>
+                <li>Sensor Integration</li>
+                <li>IoT Protocols</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/cyber-security.svg" alt="Cyber Security">
+            </div>
+            <p class="category">Core Tech &amp; Cloud</p>
+            <h3>Cyber Security</h3>
+            <p>Learn network security, ethical hacking, cryptography, and security tools. Protect systems from cyber threats.</p>
+            <ul>
+                <li>Network Security</li>
+                <li>Ethical Hacking</li>
+                <li>Cryptography</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/chatgpt.svg" alt="ChatGPT">
+            </div>
+            <p class="category">Data Science &amp; AI</p>
+            <h3>ChatGPT &amp; AI Tools</h3>
+            <p>Master ChatGPT and other AI tools for enhanced productivity and automation in various domains.</p>
+            <ul>
+                <li>ChatGPT Fundamentals</li>
+                <li>Prompt Engineering</li>
+                <li>AI Tools Integration</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/analytics.svg" alt="Analytics">
+            </div>
+            <p class="category">Data Science &amp; AI</p>
+            <h3>Business Analytics</h3>
+            <p>Learn data analysis, visualization, and business intelligence tools to drive data-driven decisions.</p>
+            <ul>
+                <li>Data Analysis</li>
+                <li>Statistical Methods</li>
+                <li>Business Intelligence</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/aws.svg" alt="AWS">
+            </div>
+            <p class="category">Core Tech &amp; Cloud</p>
+            <h3>AWS Cloud</h3>
+            <p>Master AWS cloud services, architecture, and deployment. Build scalable cloud solutions.</p>
+            <ul>
+                <li>AWS Fundamentals</li>
+                <li>Cloud Architecture</li>
+                <li>Service Integration</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/data-science.svg" alt="Data Science">
+            </div>
+            <p class="category">Data Science &amp; AI</p>
+            <h3>Data Science</h3>
+            <p>Learn data analysis, machine learning, and statistical modeling to extract insights from data.</p>
+            <ul>
+                <li>Statistical Analysis</li>
+                <li>Machine Learning</li>
+                <li>Data Visualization</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/dotnet.svg" alt=".NET">
+            </div>
+            <p class="category">Software &amp; Design</p>
+            <h3>.NET Full Stack</h3>
+            <p>Master C#, ASP.NET, Entity Framework, and web development. Build enterprise applications.</p>
+            <ul>
+                <li>C# Programming</li>
+                <li>ASP.NET Core</li>
+                <li>Entity Framework</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://shift.melmaa.tech/images/courses/uiux.svg" alt="UI UX">
+            </div>
+            <p class="category">Software &amp; Design</p>
+            <h3>UI/UX Design</h3>
+            <p>Learn user interface and experience design principles. Create engaging digital experiences.</p>
+            <ul>
+                <li>Design Principles</li>
+                <li>Wireframing</li>
+                <li>Prototyping</li>
+            </ul>
+            <a href="#contact" class="card-button">Chat on WhatsApp</a>
+            <a href="#contact" class="text-button">Download Syllabus</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="gallery" class="section">
+    <p class="small-title">Student batches and ceremonies</p>
+
+    <h2>
+        Real campus programs from our gallery — internships,
+        industrial training, and certificate days.
+    </h2>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-card">
+            <img src="https://shift.melmaa.tech/images/gallery/CJITS%20Full%20Stack%20Java%203months%20Program.jpg" alt="CJITS Full Stack Java">
+            <p>CJITS Full Stack Java onsite program</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://shift.melmaa.tech/images/gallery/Industrial%20training%20batch%202025-2026.jpg" alt="Industrial Training">
+            <p>Industrial training batch, 2025–2026</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://shift.melmaa.tech/images/gallery/Industrial%20certificate%20ceremony.jpg" alt="Certificate Ceremony">
+            <p>Industrial certificate ceremony</p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="https://shift.melmaa.tech/images/gallery/CRR%20Polytechnic%20career%20guidance.jpg" alt="Career Guidance">
+            <p>CRR Polytechnic career guidance</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section light-section">
+    <p class="small-title">Student reviews</p>
+    <h2>Student reviews</h2>
+
+    <p class="intro">
+        Reviews below are loaded from Trustmary. We do not invent quotes on this page.
+    </p>
+
+    <div class="center">
+        <a href="#contact" class="button">Book counselling</a>
+    </div>
+</section>
+
+<section class="section">
+    <p class="small-title">Mentors and students</p>
+
+    <h2>Trust the process, not a stock photo</h2>
+
+    <p class="intro">
+        You get a named mentor for your stack after counselling.
+        Here is how teaching and career support work.
+    </p>
+
+    <div class="support-grid">
+
+        <div>
+            <h3>Software and design</h3>
+            <p>Java, Python, .NET, and UI/UX. Classroom labs, code reviews, and a project you can walk through in interviews.</p>
+        </div>
+
+        <div>
+            <h3>Data Science and AI</h3>
+            <p>Data Science, AI, Analytics, and ChatGPT tools. Practice notebooks and mentor checkpoints on real datasets.</p>
+        </div>
+
+        <div>
+            <h3>Core tech and cloud</h3>
+            <p>AWS, Cyber Security, VLSI, and Embedded and IoT. Tool demos, guided assignments, and lab time.</p>
+        </div>
+
+        <div>
+            <h3>Who teaches</h3>
+            <p>Mentors are assigned by stack for the batch you join. Ask a counselor for the current trainer.</p>
+        </div>
+
+        <div>
+            <h3>How you are supported</h3>
+            <p>Doubt sessions, project reviews, and interview practice sit inside the batch.</p>
+        </div>
+
+        <div>
+            <h3>What we will not claim</h3>
+            <p>No invented placement percentages, guaranteed jobs, or fake student quotes.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="section contact-section">
+    <p class="small-title">Start this week</p>
+
+    <h2>Talk to admissions</h2>
+
+    <p class="intro">
+        Share your course interest. A counselor can reply on WhatsApp, call,
+        or a booked counselling slot.
+    </p>
+
+    <div class="contact-grid">
+
+        <div class="form-box">
+
+            <h3>Send an enquiry</h3>
+
+            <p>
+                Name, phone, course, and what you need.
+                This demo form works inside an online HTML compiler.
+            </p>
+
+            <form onsubmit="alert('Thank you! Your enquiry has been submitted.'); return false;">
+
+                <input type="text" placeholder="Full name" required>
+
+                <input type="tel" placeholder="Phone" required>
+
+                <select required>
+                    <option value="">Course</option>
+                    <option>Java Full Stack</option>
+                    <option>Python Full Stack</option>
+                    <option>Artificial Intelligence</option>
+                    <option>VLSI</option>
+                    <option>Embedded System & IoT</option>
+                    <option>Cyber Security</option>
+                    <option>ChatGPT & AI Tools</option>
+                    <option>Business Analytics</option>
+                    <option>AWS Cloud</option>
+                    <option>Data Science</option>
+                    <option>.NET Full Stack</option>
+                    <option>UI/UX Design</option>
+                </select>
+
+                <select required>
+                    <option value="">I need</option>
+                    <option>Course details</option>
+                    <option>Batch details</option>
+                    <option>Fees</option>
+                    <option>Counselling</option>
+                    <option>Placement assistance</option>
+                </select>
+
+                <button type="submit">Send Enquiry</button>
+
+            </form>
+
+            <p class="note">
+                This is a front-end demo. It does not send data to a server.
+            </p>
+
+        </div>
+
+        <div class="contact-info">
+
+            <h3>Admissions</h3>
+
+            <p><strong>Email</strong><br>support@melmaa.com</p>
+
+            <p>
+                <strong>HR / careers</strong><br>
+                hr.shiftedutech@gmail.com
+            </p>
+
+            <p>
+                <strong>Phone</strong><br>
+                +91 96405 91713<br>
+                +91 79972 80049
+            </p>
+
+            <p>Monday to Saturday, 9:00 AM to 7:00 PM IST.</p>
+
+            <h3>Campuses</h3>
+
+            <p>
+                <strong>Hyderabad</strong><br>
+                102, KM Cube Building, Ghousia Masjid Rd,
+                Weaker Section Colony, Kondapur,
+                Telangana 500084.
+            </p>
+
+            <p>
+                <strong>Eluru</strong><br>
+                3D-5-1/6, Westren Street, 1-Town,
+                Eluru, West Godavari,
+                Andhra Pradesh 534001.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section light-section">
+
+    <p class="small-title">How we support the path</p>
+
+    <h2>
+        Internships, projects, and campus training sit inside the career path.
+    </h2>
+
+    <div class="service-grid">
+
+        <div>
+            <h3>IT Courses Training</h3>
+            <p>Hands-on training in programming, web development, cloud, and cybersecurity.</p>
+        </div>
+
+        <div>
+            <h3>Internships</h3>
+            <p>Long-term and short-term internships on live projects with professional mentorship.</p>
+        </div>
+
+        <div>
+            <h3>Industrial Training</h3>
+            <p>Campus and institute programs connecting academic syllabi with tools and labs.</p>
+        </div>
+
+        <div>
+            <h3>Major and mini projects</h3>
+            <p>Guided project work with documentation, reviews, and portfolio-ready outcomes.</p>
+        </div>
+
+        <div>
+            <h3>Campus recruitment training</h3>
+            <p>Aptitude, technical rounds, resumes, and interview practice.</p>
+        </div>
+
+        <div>
+            <h3>Soft skill development</h3>
+            <p>Communication, presentation, and teamwork practice.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <p class="small-title">Approved and recognized by</p>
+
+    <h2>Programs follow recognition from Indian educational authorities used in our internships and campus training.</h2>
+
+    <div class="recognition">
+
+        <div>
+            <h3>AICTE</h3>
+        </div>
+
+        <div>
+            <h3>National Internship Portal</h3>
+        </div>
+
+        <div>
+            <h3>APSCHE</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about" class="section">
+
+    <p class="small-title">Institute</p>
+
+    <h2>Built as a career path, not a course list</h2>
+
+    <p class="intro">
+        ShiftEduTech is the edutech division of Melmaa Tech.
+        Classroom and online batches are available in Kondapur,
+        Hyderabad and 1-Town, Eluru.
+    </p>
+
+    <div class="about-grid">
+
+        <div>
+            <h3>Edutech of Melmaa Tech</h3>
+            <p>Classroom and online IT training in Hyderabad and Eluru.</p>
+        </div>
+
+        <div>
+            <h3>Path over brochure</h3>
+            <p>Learn, practice, build, get mentored, become job-ready, and get career support.</p>
+        </div>
+
+        <div>
+            <h3>Honest claims</h3>
+            <p>No invented placement percentages or fake student quotes.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="faq" class="section light-section">
+
+    <p class="small-title">Frequently asked questions</p>
+
+    <h2>Short answers for students</h2>
+
+    <div class="faq-box">
+
+        <details>
+            <summary>Is ShiftEduTech only an IT course institute?</summary>
+            <p>Courses are how you enter. The product is a six-step path: learn, practice, build, get mentored, become job-ready, and get career support.</p>
+        </details>
+
+        <details>
+            <summary>Do you guarantee a job?</summary>
+            <p>No. Placement assistance includes mock interviews, resume help, and counselor follow-up.</p>
+        </details>
+
+        <details>
+            <summary>Which courses does ShiftEduTech offer?</summary>
+            <p>Java Full Stack, Python Full Stack, .NET, UI/UX, Data Science, AI, Business Analytics, AWS, Cyber Security, VLSI, Embedded Systems & IoT, and ChatGPT & AI Tools.</p>
+        </details>
+
+        <details>
+            <summary>Where are the campuses?</summary>
+            <p>ShiftEduTech has campuses in Kondapur, Hyderabad and 1-Town, Eluru.</p>
+        </details>
+
+        <details>
+            <summary>How do I enquire about a batch?</summary>
+            <p>Use the enquiry form above or contact the admissions numbers shown on this page.</p>
+        </details>
+
+        <details>
+            <summary>Do you offer internships and projects?</summary>
+            <p>Yes. Internships, industrial training, and mini or major projects are part of the career path.</p>
+        </details>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h2>ShiftEduTech</h2>
+            <p>ShiftEduTech is the edutech arm of Melmaa Tech.</p>
+            <p>Classroom and online IT training in Hyderabad and Eluru.</p>
+        </div>
+
+        <div>
+            <h3>Explore</h3>
+            <a href="#home">Home</a>
+            <a href="#path">Career path</a>
+            <a href="#courses">Courses</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#faq">FAQ</a>
+        </div>
+
+        <div>
+            <h3>Company</h3>
+            <a href="#about">About</a>
+            <a href="#gallery">Stories</a>
+            <a href="#contact">Reviews</a>
+            <a href="#contact">Faculty</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Hyderabad campus</p>
+            <p>Eluru campus</p>
+            <p>support@melmaa.com</p>
+            <p>+91 96405 91713</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 ShiftEduTech. All rights reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
